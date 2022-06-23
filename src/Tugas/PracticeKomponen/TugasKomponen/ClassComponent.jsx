@@ -15,8 +15,6 @@ class ClassComponent extends React.Component{
     render() {
         return(
             <div>
-                <br />
-                <hr /> <hr />
                 <h1>Ini Tugas Class Komponen</h1>
                 <h2>Hello {this.props.name}, Tekan button Count Dibawah ini untuk menghitung</h2>
                 <h4>Count On Plus : {this.state.count}</h4>
