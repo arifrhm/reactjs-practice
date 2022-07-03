@@ -1,37 +1,37 @@
-$green : rgb(0, 207, 86);
-$darkgreen : rgb(1, 130, 55);
-$black : rgb(36, 36, 36);
+// $green : rgb(0, 207, 86);
+// $darkgreen : rgb(1, 130, 55);
+// $black : rgb(36, 36, 36);
 
 
 
 
-.btn{
-    border: 2px solid rgb(70, 70, 70);
-    background-color: white;
-    color: rgb(70, 70, 70);
-    padding: 14px 28px;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 4px;
-}
+// .btn{
+//     border: 2px solid rgb(70, 70, 70);
+//     background-color: white;
+//     color: rgb(70, 70, 70);
+//     padding: 14px 28px;
+//     font-size: 16px;
+//     cursor: pointer;
+//     border-radius: 4px;
+// }
 
-.btn-custom{
-    background-color: white;
-    border-color: $green;
-    color: $green;
+// .btn-custom{
+//     background-color: white;
+//     border-color: $green;
+//     color: $green;
     
 
-    &:hover{
-        border-color: $darkgreen;
-        background-color: $green;
-        color: white; 
-    }
-}
+//     &:hover{
+//         border-color: $darkgreen;
+//         background-color: $green;
+//         color: white; 
+//     }
+// }
 
-.tittle{
-    color: $green;
-}
+// .tittle{
+//     color: $green;
+// }
 
-.tittle-text{
-    color: $darkgreen;
-}
+// .tittle-text{
+//     color: $darkgreen;
+// }

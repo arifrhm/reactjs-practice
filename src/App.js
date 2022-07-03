@@ -1,15 +1,9 @@
-// import FirstComponent from "./Materi/FirstKomponen";
-// import PracticeComponent from "./Tugas/PracticeKomponen";
-
-import Styling from "./Materi/Styling";
+import Tugas from "./Tugas";
 
 function App() {
   return (
     <div className="App">
-      {/* <FirstComponent/>
-      <PracticeComponent/> */}
-
-      <Styling/>
+      <Tugas/>
     </div>
   );
 }
