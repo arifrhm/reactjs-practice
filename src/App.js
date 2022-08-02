@@ -1,9 +1,11 @@
-import Tugas from "./Tugas";
+import Validation from "./Materi/Form/Pembahasan/Validation";
+
+
 
 function App() {
   return (
     <div className="App">
-      <Tugas/>
+      <Validation/>
     </div>
   );
 }
