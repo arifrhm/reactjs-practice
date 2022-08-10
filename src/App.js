@@ -1,11 +1,12 @@
-import Validation from "./Materi/Form/Pembahasan/Validation";
+import Lifecycle from "./Tugas/LifecycleComponent/Lifecycle";
+
 
 
 
 function App() {
   return (
     <div className="App">
-      <Validation/>
+      <Lifecycle/>
     </div>
   );
 }

@@ -1,12 +1,12 @@
-import React from "react";
-import Validation from "./Pembahasan/Validation";
+// import React from "react";
+// import Validation from "./Pembahasan/Validation";
 
-export default class Form extends React.Component{
-    render(){
-        return(
-            <div>
-                <Validation/>
-            </div>
-        )
-    }
-}
+// export default class Form extends React.Component{
+//     render(){
+//         return(
+//             <div>
+//                 <Validation/>
+//             </div>
+//         )
+//     }
+// }
