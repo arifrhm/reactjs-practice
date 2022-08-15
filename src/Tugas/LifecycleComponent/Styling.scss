@@ -10,8 +10,12 @@ $darkgrey : rgb(42, 42, 42);
     font-size: 24px;
 }
 
+.container{
+    margin :auto;
+}
+
 .row{
-    margin-top: 50px;
+    margin-top: 40px;
     margin-bottom: -80px;
 }
 
@@ -68,10 +72,5 @@ $darkgrey : rgb(42, 42, 42);
     height: 30px;
     line-height: 30px;
     margin-top: 80px;
+    font-weight: bold;
 }
-
-@media (max-width: 800px) {
-    .home__img, .home__content, .q-1, .q-2{
-      flex: 100%;
-    }
-  }

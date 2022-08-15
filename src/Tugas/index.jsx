@@ -6,7 +6,7 @@ export default class Tugas extends React.Component{
     render(){
         return(
             <div>
-                <Lifecycle/>
+                <Lifecycle/>                
             </div>
         )
     }

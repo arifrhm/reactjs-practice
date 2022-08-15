@@ -12,79 +12,44 @@ export default class Lifecycle extends React.Component {
         super(props)
         this.state = {
             articles: [],
+            search: "",
         }
-        this.cancelToken = ''
-        this.onIptClick = this.onIptClick.bind(this)
-        this.node = React.createRef()
     }
 
 
     componentDidMount() {
-        // axios
-        //     .get(API_URL)
-        //     .then(res => {
-        //         const articles = res.data.articles;
-        //         // console.log(articles);
-        //         this.setState({ articles });
-        //     })
-        //     .catch(error => {
-        //         console.log('Maap Mas ada yang error', error);
-        //     })
-        document.addEventListener('mousedown', this.onIptClick)
+        axios
+            .get(API_URL)
+            .then(res => {
+                const articles = res.data.articles;
+                // console.log(articles);
+                this.setState({ articles });
+            })
+            .catch(error => {
+                console.log('Maap Mas ada yang error', error);
+            })
     }
 
-
-    componentWillUnmount() {
-        document.removeEventListener('mousedown', this.onIptClick)
-    }
-
-
-    onIptClick = (e) => {
-        if (this.node.current.contains(e.target)) {
-            return
-        }
-        this.setState({
-            articles: [],
+    searcharticles(){
+        let value = this.state.search
+        axios
+        .get(API_URL + '?q= ' + value)
+        .then(res => {
+            const articles = res.data.articles;
+            // console.log(articles);
+            this.setState({ articles });
+        })
+        .catch(error => {
+            console.log('Maap Mas ada yang error', error);
         })
     }
-
-
-    onLsChange = async (e) => {
-        if (this.isReqToken) {
-            this.isReqToken.cancel()
-        }
-        this.isReqToken = axios.CancelToken.source()
-        await axios
-            .get('https://newsapi.org/v2/top-headlines?country=id&apiKey=9e43a771c30c4b81aa1d0c1f5aaba310', {
-                isReqToken: this.isReqToken.token,
-            })
-            .then((res) => {
-                this.setState({
-                    articles: res.data.articles,
-                })
-            })
-            .catch((error) => {
-                if (axios.isCancel(error) || error) {
-                    console.log('Could not get')
-                }
-            })
-        let filterSearch = e.target.value.toLowerCase()
-        let searchRes = this.state.Posts.filter((e) => {
-            let finalRes = e.title.toLowerCase()
-            return finalRes.indexOf(filterSearch) !== -1
-        })
-        this.setState({
-            articles: searchRes,
-        })
-    }
-
 
     render() {
         const { articles } = this.state
         // console.log(this.state.articles);
         return (
             <div className="body">
-
+                {/* <!--========== Navbar ==========--> */}
                 <Navbar bg="dark" variant="dark">
                     <Container>
                         <Navbar.Brand href="#home" className="text-brand">
@@ -100,31 +65,36 @@ export default class Lifecycle extends React.Component {
                     </Container>
                 </Navbar>
 
-
-
-                <div className="searchModule">
+                {/* <!--========== Form Searching ==========--> */}
+                <div className="container">
                     <div className="row">
                         <div className="col-md-8">
                             <div className="input-group mb-3">
                                 <input 
-                                onClick={this.onIptClick}
-                                onChange={this.onLsChange}
-                                type="text" value="" 
-                                id="search-input" className="form-control form-search" 
+                                type="text"
+                                id="search-input" 
+                                className="form-control form-search" 
                                 placeholder="Search News..."
-                                ref={this.node} 
                                 aria-label="Recipient's username" 
-                                aria-describedby="button-addon2" 
+                                aria-describedby="button-addon2"
+                                onChange={(e) =>
+                                    this.setState({
+                                      search: e.target.value,
+                                    })
+                                  } 
                                 />
                                 <button 
-                                id="inputan-search" className="btn btn-primary search-button" 
-                                type="button">
+                                id="inputan-search" 
+                                className="btn btn-primary search-button" 
+                                type="button"
+                                onClick={this.searcharticles}>
                                     Search
                                 </button>
                             </div>
                         </div>
                     </div>
 
+                    {/* <!--========== Content ==========--> */}
                     <div id="data" className="row cards">
                         <Row>
                             {articles && articles.map((article) => (
