@@ -1,18 +1,17 @@
 import React from 'react'
+import 'bootstrap/dist/css/bootstrap.min.css';
 import {Col, Card, Button} from 'react-bootstrap'
+import './Styling.scss';
 
 const Articles = ({article}) => {
     return (
-        <Col>
+        <Col md={4} xs={6} className = "cards">
             <Card style={{ width: '18rem' }}>
-                <Card.Img variant="top" src="holder.js/100px180" />
+                <Card.Img variant="top" src={article.urlToImage} />
                 <Card.Body>
-                    <Card.Title>Card Title</Card.Title>
-                    <Card.Text>
-                        Some quick example text to build on the card title and make up the
-                        bulk of the card's content.
-                    </Card.Text>
-                    <Button variant="primary">Go somewhere</Button>
+                    <Card.Title>{article.title}</Card.Title>
+                    <Card.Text>{article.description}</Card.Text>
+                    <Button href={article.url} className="read-news">Read More...</Button>
                 </Card.Body>
             </Card>
         </Col>

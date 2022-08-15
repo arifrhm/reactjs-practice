@@ -1,5 +1,19 @@
 $darkgrey : rgb(42, 42, 42);
 
+.body{
+    background-color: whitesmoke;
+}
+
+.text-brand{
+    color: whitesmoke;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.row{
+    margin-top: 50px;
+    margin-bottom: -80px;
+}
 
 .form-search{
     text-decoration: none;
@@ -12,7 +26,7 @@ $darkgrey : rgb(42, 42, 42);
 .search-button{
     background-color: orange;
     text-decoration: none;
-    color: white;
+    color: whitesmoke;
     border-radius: 6px;
     border-color: orange;
     font-weight: bold;
@@ -24,6 +38,28 @@ $darkgrey : rgb(42, 42, 42);
     }
 }
 
+.cards{
+    margin-bottom: 24px;
+    border-color: orange;
+    border-radius: 10px;
+}
+
+.read-news{
+    background-color: orange;
+    text-decoration: none;
+    color: whitesmoke;
+    border-radius: 8px;
+    border-color: whitesmoke;
+    font-weight: bold;
+
+    &:hover{
+        background-color: whitesmoke;
+        color: orange;
+        border-color: orange;
+    }
+}
+
+
 .footer{
     background-color: orange;
     color: $darkgrey;
@@ -33,3 +69,9 @@ $darkgrey : rgb(42, 42, 42);
     line-height: 30px;
     margin-top: 80px;
 }
+
+@media (max-width: 800px) {
+    .home__img, .home__content, .q-1, .q-2{
+      flex: 100%;
+    }
+  }
