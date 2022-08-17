@@ -4,6 +4,7 @@ import { Container, Navbar, Row } from 'react-bootstrap'
 import Articles from './Articles'
 import './Styling.scss';
 import { API_URL } from './Constants'
+import { SEARCH_URL } from './Constants'
 import axios from 'axios';
 
 export default class Lifecycle extends React.Component {
@@ -33,7 +34,7 @@ export default class Lifecycle extends React.Component {
     searcharticles(){
         let value = this.state.search
         axios
-        .get(API_URL + '?q= ' + value)
+        .get(API_URL + '&q= ' + value)
         .then(res => {
             const articles = res.data.articles;
             // console.log(articles);
@@ -87,7 +88,8 @@ export default class Lifecycle extends React.Component {
                                 id="inputan-search" 
                                 className="btn btn-primary search-button" 
                                 type="button"
-                                onClick={this.searcharticles}>
+                                onClick={(e) =>
+                                    this.searcharticles(e)}>
                                     Search
                                 </button>
                             </div>
