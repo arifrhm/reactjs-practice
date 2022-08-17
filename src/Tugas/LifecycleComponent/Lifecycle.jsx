@@ -4,7 +4,6 @@ import { Container, Navbar, Row } from 'react-bootstrap'
 import Articles from './Articles'
 import './Styling.scss';
 import { API_URL } from './Constants'
-import { SEARCH_URL } from './Constants'
 import axios from 'axios';
 
 export default class Lifecycle extends React.Component {
