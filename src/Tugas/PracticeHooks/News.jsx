@@ -1,19 +1,12 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Container, Navbar} from 'react-bootstrap'
-import styled from "styled-components";
+import { Button, Card, Col, Container, Navbar, } from 'react-bootstrap'
 import { Circles } from "react-loader-spinner";
 import { useState } from "react";
 import { useEffect } from "react";
+import { API_URL } from './Constants'
 import './Styling.scss';
 
-const Paragraph = styled.p`
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-line-clamp: 4; /* number of lines to show */
-  -webkit-box-orient: vertical;
-`;
 
 export const News = () => {
     const [search, setSearch] = useState();
@@ -21,13 +14,31 @@ export const News = () => {
     let [loading, setLoading] = useState(false);
 
     useEffect(() => {
+        // other code
         getNews()
-    }, [])
+     
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+     }, [])
 
     function getNews() {
         setLoading(loading = true);
-        const url = `https://newsapi.org/v2/everything?q=${search}&sortBy=publishedAt&apiKey=9e43a771c30c4b81aa1d0c1f5aaba310`;
-        const news = fetch(url);
+        const news = fetch(API_URL);
+        news
+            .then(function (res) {
+                return res.json();
+            })
+            .then((res) => {
+                setNews(res.articles || []);
+                setLoading(loading = false);
+            })
+            .catch((err) => {
+                // table.innerHTML = message(err.message)
+            });
+    };
+
+    function searchNews() {
+        setLoading(loading = true);
+        const news = fetch(API_URL + '&q= ' + search);
         news
             .then(function (res) {
                 return res.json();
@@ -74,7 +85,7 @@ export const News = () => {
                                 <button
                                     className="search-button"
                                     type="button"
-                                    onClick={getNews}
+                                    onClick={searchNews}
                                 >
                                     Search
                                 </button>
@@ -91,37 +102,16 @@ export const News = () => {
                                 : (
                                     news.map((item, index) => (
                                         <div className="col" key={index}>
-                                            <div className="card shadow-sm">
-                                                <img
-                                                    src={item.urlToImage}
-                                                    alt="image"
-                                                    className="bd-placeholder-img card-img-top"
-                                                    width="100%"
-                                                    height={225}
-                                                />
-                                                <div className="card-body">
-                                                    <h3>{item.title}</h3>
-                                                    <small className="text-muted">{item.author}</small>
-
-                                                    <Paragraph className="card-text">
-                                                        {item.content}
-                                                    </Paragraph>
-                                                    <div className="d-flex justify-content-between align-items-center">
-                                                        <div className="btn-group">
-                                                            <a
-                                                                href={item.url}
-                                                                type="button"
-                                                                className="btn btn-sm btn-outline-secondary read-news"
-                                                            >
-                                                                Read More..
-                                                            </a>
-                                                        </div>
-                                                        <small className="text-muted p-6">
-                                                            {item.publishedAt}
-                                                        </small>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                            <Col className="cards">
+                                                <Card style={{ width: '22rem' }}>
+                                                    <Card.Img variant="top" src={item.urlToImage} />
+                                                    <Card.Body>
+                                                        <Card.Title>{item.title}</Card.Title>
+                                                        <Card.Text>{item.description}</Card.Text>
+                                                        <Button href={item.url} className="read-news">Read More...</Button>
+                                                    </Card.Body>
+                                                </Card>
+                                            </Col>
                                         </div>
                                     ))
                                 )}
