@@ -68,8 +68,8 @@ export default class Lifecycle extends React.Component {
                 {/* <!--========== Form Searching ==========--> */}
                 <div className="container">
                     <div className="row">
-                        <div className="col-md-8">
-                            <div className="input-group mb-3">
+                        <div className="col-lg-6 col-md-8 mx-auto">
+                            <div className="py-5 text-center input-group mb-3">
                                 <input 
                                 type="text"
                                 id="search-input" 

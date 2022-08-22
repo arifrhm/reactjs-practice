@@ -8,6 +8,11 @@ $darkgrey : rgb(42, 42, 42);
     color: whitesmoke;
     font-weight: bold;
     font-size: 24px;
+    margin-left: -24px;
+}
+
+.nav-text{
+    font-weight: bold;
 }
 
 .container{
@@ -20,11 +25,16 @@ $darkgrey : rgb(42, 42, 42);
 }
 
 .form-search{
+    margin-top: -16px;
+}
+
+.search-input{
     text-decoration: none;
     color: orange;
     border-radius: 8px;
     border-color:orange;
-    font-weight: bold; 
+    font-weight: bold;
+
 }
 
 .search-button{
@@ -43,6 +53,7 @@ $darkgrey : rgb(42, 42, 42);
 }
 
 .cards{
+    margin-top: -32px;
     margin-bottom: 40px;
     border-color: orange;
     border-radius: 16px;

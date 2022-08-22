@@ -37,7 +37,7 @@ $darkgrey : rgb(42, 42, 42);
      
     &:hover{
     background-color: $darkgrey;
-    border-color: orange;
+    border-color: $darkgrey;
     color: orange;
     }
 }

@@ -1,5 +1,5 @@
 import React from "react";
-import { News } from "./PracticeHooks/News";
+import News from "./PracticeHooks/News";
 // import Lifecycle from "./LifecycleComponent/Lifecycle";
 
 

@@ -1,6 +1,6 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Button, Card, Col, Container, Navbar, } from 'react-bootstrap'
+import { Button, Card, Col, Container, Nav, Navbar, } from 'react-bootstrap'
 import { Circles } from "react-loader-spinner";
 import { useState } from "react";
 import { useEffect } from "react";
@@ -16,9 +16,9 @@ export const News = () => {
     useEffect(() => {
         // other code
         getNews()
-     
+
         // eslint-disable-next-line react-hooks/exhaustive-deps
-     }, [])
+    }, [])
 
     function getNews() {
         setLoading(loading = true);
@@ -67,16 +67,21 @@ export const News = () => {
                         />{' '}
                         Joysite News
                     </Navbar.Brand>
+                    <Nav className="ml-auto nav-text">
+                        <Nav.Link href="#home">Home</Nav.Link>
+                        <Nav.Link href="#contact">Contact</Nav.Link>
+                        <Nav.Link href="#about">About Us</Nav.Link>
+                    </Nav>
                 </Container>
             </Navbar>
             {/* <!--========== Form Serach ==========--> */}
             <main>
-                <section className="py-5 text-center container">
+                <section className="py-5 container">
                     <div className="row">
                         <div className="col-lg-6 col-md-8 mx-auto">
-                            <form className="d-flex">
+                            <form className="d-flex form-search">
                                 <input
-                                    className="form-control me-2 form-search"
+                                    className="form-control me-2 search-input"
                                     type="search"
                                     placeholder="Search"
                                     aria-label="Search"
