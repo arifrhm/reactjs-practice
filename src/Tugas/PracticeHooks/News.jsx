@@ -4,7 +4,6 @@ import { Button, Card, Col, Container, Nav, Navbar, } from 'react-bootstrap'
 import { Circles } from "react-loader-spinner";
 import { useState } from "react";
 import { useEffect } from "react";
-import { API_URL } from './Constants'
 import './Styling.scss';
 
 
@@ -20,25 +19,11 @@ export const News = () => {
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
+
     function getNews() {
         setLoading(loading = true);
+        const API_URL = `https://newsapi.org/v2/everything?q=${search}&sortBy=publishedAt&apiKey=9e43a771c30c4b81aa1d0c1f5aaba310`;
         const news = fetch(API_URL);
-        news
-            .then(function (res) {
-                return res.json();
-            })
-            .then((res) => {
-                setNews(res.articles || []);
-                setLoading(loading = false);
-            })
-            .catch((err) => {
-                // table.innerHTML = message(err.message)
-            });
-    };
-
-    function searchNews() {
-        setLoading(loading = true);
-        const news = fetch(API_URL + '&q= ' + search);
         news
             .then(function (res) {
                 return res.json();
@@ -90,7 +75,7 @@ export const News = () => {
                                 <button
                                     className="search-button"
                                     type="button"
-                                    onClick={searchNews}
+                                    onClick={getNews}
                                 >
                                     Search
                                 </button>
