@@ -1,13 +1,15 @@
 import React from 'react';
-import { News } from './Tugas/PracticeHooks/News';
+import Routing from './Materi/Routing';
+// import { Redux } from './Materi/Redux';
 // import PracticeRouting from './Tugas';
 
 function App() {
   return (
     <div className="App">
       <div>
+        <Routing/>
         {/* <PracticeRouting/> */}
-        <News/>
+        {/* <Redux/> */}
       </div>
     </div>
   );
