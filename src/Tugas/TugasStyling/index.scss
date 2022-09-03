@@ -1,0 +1,202 @@
+// $purple: rgba(80, 1, 184, 0.8);
+// $pink: rgba(235, 0, 176, 0.8);
+
+
+// .body{
+//     background: linear-gradient(180deg, $purple 10%, $pink 50%);
+    
+// }
+
+// /*==================== Navigasi ====================*/
+// nav {
+// 	z-index: 9999;
+// 	width: 100%;
+// 	text-align:center;
+// 	top: 0;
+// 	right: 0;
+
+// }
+
+// nav ul li {
+// 	padding: 10px 10px;
+// 	display: inline-block;
+// }
+
+// nav ul li a {
+// 	padding: 10px;
+// 	text-decoration: none;
+// 	font-size: 16px;
+// 	color: #fff;
+
+//     &:hover{
+//         color: $pink;
+//     }
+// }
+
+// /*==================== Home ====================*/
+// .container{
+//     margin: auto 200px;
+//     margin-top: 40px;
+//     /*border: 4px solid white;*/
+//     display: flex;
+//     justify-content: space-evenly;
+//     min-height: 450px;
+//     align-items: center;
+//     flex-wrap: wrap;
+// }
+
+// .home__img, .home__content{
+//     margin: 10px;
+// }
+
+// .home__title{
+//     font-size: 40px;
+//     color: aliceblue;
+//     font-weight: bold;
+// }
+
+// .home__subtitle{
+//     font-size: 24px;
+//     color: aliceblue;
+//     font-weight: medium;
+//     margin-bottom: 8px;
+// }
+
+// .home__description{
+//     margin-bottom: 32px;
+// }
+
+// .picture{
+//     width: 320px;
+// }
+
+// .home__buttons{
+//     background-color: aliceblue;
+//     text-decoration: none;
+//     color: blueviolet;
+//     padding: 10px 25px;
+//     border-radius: 8px;
+// }
+
+
+// .home__buttons:hover{
+//     background-color: $pink;
+//     color: #fff;
+// }
+
+// /*==================== About Me ====================*/
+// .about-tittle{
+//     text-align: center;
+//     font-size: 32px;
+//     color: aliceblue;
+//     margin-top: 100px;
+// }
+
+// .about-description{
+//     color: aliceblue;
+//     text-align: justify;
+//     font-size: 16px;
+//     margin: auto 200px;
+//     margin-bottom: 100px;
+// }
+
+// /*==================== Qualification ====================*/
+// .q-tittle{
+//     text-align: center;
+//     color: aliceblue;
+//     font-size: 32px;
+//     margin-bottom: 5px;
+// }
+
+// .about__container{
+//     margin: auto 200px;
+//     text-align: justify;
+//     display: flex;
+//     justify-content: space-evenly;
+// }
+
+// .about__container div {
+//     margin: 40px;
+//     color: aliceblue;
+//     margin-bottom: 100px;
+// }
+
+// .q-tittle1, .q-tittle2{
+//     text-align: center;
+// }
+
+// .q-1, .q-2{
+//     margin: 10px;
+// }
+
+// /*==================== Contact Me ====================*/
+// .contact__title{
+//     text-align: center;
+//     color: aliceblue;
+//     font-size: 32px;
+//     margin-bottom: 5px;
+// }
+
+// .contact__form{
+//     display: flex;
+//     justify-content: center;
+// }
+
+// .contact__content{
+//     background-color: rgba(0,0,0,.5);
+//     border-radius: 8px;
+//     padding: 12px 16px 4px;
+//     width: 500px;
+//     margin: 8px;
+// }
+
+// .contact__label{
+//     font-size: 14px;
+//     color: aliceblue;
+// }
+
+// .contact__input{
+//     width: 100%;
+//     background-color: var(--input-color);
+//     color: aliceblue;
+//     font-size: 14px;
+//     border: none;
+//     outline: none;
+//     padding: 12px 8px 8px 0px;
+// }
+
+// .contact_button{
+//     width: 160px;
+//     height: 50px;
+//     background-color: $purple;
+//     color: aliceblue;
+//     text-decoration: none;
+//     margin-left: 200px;
+//     border-radius: 8px;
+//     border-color: blueviolet;
+//     cursor: pointer;
+//     margin-bottom: 40px;
+
+//     &:hover{
+//         background-color: aliceblue;
+//         color: $purple;
+//         text-decoration: none;
+//     }
+// }
+
+
+// .footer{
+//     background-color: $purple;
+//     color: aliceblue;
+//     text-align: center;
+//     width: 100%;
+//     height: 50px;
+//     line-height: 50px;
+// }
+
+// /* Responsive layout*/
+// @media (max-width: 800px) {
+//     .home__img, .home__content, .q-1, .q-2{
+//       flex: 100%;
+//     }
+//   }

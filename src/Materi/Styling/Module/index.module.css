@@ -1,0 +1,20 @@
+.btn{
+    border: 2px solid rgb(70, 70, 70);
+    background-color: white;
+    color: rgb(70, 70, 70);
+    padding: 14px 28px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+.info{
+    border-color: blueviolet;
+    background-color: fuchsia;
+    color: darkviolet;
+}
+
+.info:hover{
+    background-color: darkviolet;
+    color: fuchsia;
+}
