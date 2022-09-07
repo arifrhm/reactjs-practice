@@ -1,13 +1,13 @@
-import { applyMiddleware, combineReducers, compose, createStore } from 'redux';
-import thunk from 'redux-thunk';
-import counterReducer from './Features/Counter/reducer';
+import thunk from 'redux-thunk'
+import { applyMiddleware, combineReducers, compose, createStore } from 'redux'
+import { CounterReducer } from './Features/Counter/reducer';
 
 let rootReducers = combineReducers({
-    counter: counterReducer
+    counter: CounterReducer
 });
 
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
-let Store = createStore(rootReducers, composeEnhancers(applyMiddleware(thunk)));
+let store = createStore(rootReducers, composeEnhancers(applyMiddleware(thunk)));
 
-export default Store;
+export default store;
