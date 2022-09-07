@@ -1,5 +1,5 @@
 import React from 'react'
-import store from '../../App/store'
+import store from '../../app/store'
 import { Counter } from './Pembahasan/Counter'
 import { Provider } from 'react-redux'
 

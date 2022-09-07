@@ -1,4 +1,4 @@
-import * as counter from './constant';
+import * as counter from './constants';
 
 let initialState = {
     count: 0
