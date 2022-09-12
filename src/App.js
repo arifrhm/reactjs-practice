@@ -6,8 +6,7 @@ function App() {
   return (
     <div className="App">
       <div>
-        <Redux/>
-        {/* <News/> */}
+        <Routing/>
       </div>
     </div>
   );
