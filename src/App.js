@@ -1,5 +1,5 @@
 import React from 'react';
-import { Redux } from './Materi/Redux';
+import Routing from './Materi/Routing/index';
 // import { News } from './Tugas/PracticeHooks/News';
 
 function App() {
