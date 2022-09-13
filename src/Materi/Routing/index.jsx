@@ -1,6 +1,7 @@
 import Navigation from './Navigation';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Home from './Home';
+import { News } from '../../Tugas/PracticeHooks/News';
+// import Home from './Home';
 import Service from './Service';
 import Contact from './Contact';
 import Client from './Client';
@@ -12,7 +13,7 @@ const Routing = () => {
             <Router>
             <Navigation/>
                 <Routes>
-                    <Route path="/" element={<Home/>}/>
+                    <Route path="/" element={<News/>}/>
                 </Routes>
                 <Routes>
                     <Route path="Service" element={<Service/>}/>
